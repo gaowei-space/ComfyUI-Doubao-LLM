@@ -22,9 +22,9 @@ classifiers = [
 keywords = ["comfyui", "doubao", "llm", "ai", "bytedance"]
 
 [project.urls]
-Homepage = "https://github.com/your-username/comfyui-doubao-llm"
-Repository = "https://github.com/your-username/comfyui-doubao-llm"
-Issues = "https://github.com/your-username/comfyui-doubao-llm/issues"
+Homepage = "https://github.com/gaowei-space/comfyui-doubao-llm"
+Repository = "https://github.com/gaowei-space/comfyui-doubao-llm"
+Issues = "https://github.com/gaowei-space/comfyui-doubao-llm/issues"
 
 [build-system]
 requires = ["setuptools>=45", "wheel"]
