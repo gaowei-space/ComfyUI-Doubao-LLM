@@ -1,0 +1,120 @@
+{
+  "last_node_id": 4,
+  "last_link_id": 3,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "DoubaoAPI",
+      "pos": [100, 100],
+      "size": {"0": 315, "1": 78},
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "doubao_api",
+          "type": "DOUBAO_API",
+          "links": [1],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DoubaoAPI"
+      },
+      "widgets_values": [
+        "",
+        "https://ark.cn-beijing.volces.com/api/v3"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "DoubaoConfig",
+      "pos": [100, 220],
+      "size": {"0": 315, "1": 150},
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "doubao_config",
+          "type": "DOUBAO_CONFIG",
+          "links": [2],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DoubaoConfig"
+      },
+      "widgets_values": [
+        "doubao-seed-1.6-250615",
+        1000,
+        0.7,
+        0.9
+      ]
+    },
+    {
+      "id": 3,
+      "type": "DoubaoTextChat",
+      "pos": [500, 100],
+      "size": {"0": 400, "1": 200},
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "doubao_api",
+          "type": "DOUBAO_API",
+          "link": 1
+        },
+        {
+          "name": "doubao_config",
+          "type": "DOUBAO_CONFIG",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "response",
+          "type": "STRING",
+          "links": [3],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DoubaoTextChat"
+      },
+      "widgets_values": [
+        "请介绍一下人工智能的发展历史",
+        "你是一个专业的AI助手，请提供准确和有用的信息。"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "ShowText",
+      "pos": [950, 100],
+      "size": {"0": 300, "1": 200},
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText"
+      }
+    }
+  ],
+  "links": [
+    [1, 1, 0, 3, 0, "DOUBAO_API"],
+    [2, 2, 0, 3, 1, "DOUBAO_CONFIG"],
+    [3, 3, 0, 4, 0, "STRING"]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
