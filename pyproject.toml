@@ -3,7 +3,7 @@ name = "comfyui-doubao-llm"
 version = "1.0.0"
 description = "ComfyUI nodes for Doubao (ByteDance) LLM and Vision Language Model integration"
 authors = [
-    {name = "Your Name", email = "your.email@example.com"}
+    {name = "Will Gao", email = "will-gao@outlook.com"}
 ]
 readme = "README.md"
 license = {file = "LICENSE"}
