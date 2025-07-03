@@ -35,3 +35,8 @@ packages = ["comfyui-doubao-llm"]
 
 [tool.setuptools.package-data]
 "comfyui-doubao-llm" = ["*.py", "*.md", "*.txt", "examples/*.json"]
+
+[tool.comfy]
+PublisherId = "will-gao"
+DisplayName = "ComfyUI Doubao LLM"
+Icon = ""
