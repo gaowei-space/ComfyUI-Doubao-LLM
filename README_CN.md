@@ -253,25 +253,10 @@ cd comfyui-doubao-llm
 pip install -r requirements.txt
 ```
 
-详细的开发文档请参考 [DEVELOPMENT.md](DEVELOPMENT.md)。
-
 ## 许可证
 
 本项目采用 MIT 许可证。详情请参阅 [LICENSE](LICENSE) 文件。
 
-## 更新日志
-
-### v1.0.0
-- 初始版本发布
-- 支持豆包文本和视觉理解模型
-- 基础的API集成和节点实现
-
-## 支持
-
-如果您遇到问题或有建议，请：
-1. 查看本README的常见问题部分
-2. 在GitHub上提交Issue
-3. 参考火山引擎豆包API官方文档
 
 ---
 

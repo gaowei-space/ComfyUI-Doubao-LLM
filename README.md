@@ -179,22 +179,6 @@ MIT License
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## Support
-
-If you encounter any issues, please:
-1. Check the [Troubleshooting](#troubleshooting) section
-2. Review the [Detailed Setup Guide](SETUP_GUIDE.md)
-3. Submit an issue on GitHub
-
 ---
 
 **Note**: This plugin requires a valid Doubao API key. Please ensure you comply with ByteDance's terms of service when using this plugin.
-
-## Update Log
-
-### Latest Updates
-- ✅ Added Model ID calling support (recommended method)
-- ✅ Updated to latest Doubao 1.6 series models
-- ✅ Optimized default configuration
-- ✅ Enhanced documentation and setup guide
-- ✅ Improved error handling and user experience
