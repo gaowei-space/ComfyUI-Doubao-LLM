@@ -423,13 +423,6 @@ class DoubaoVisionChatNode:
         ignore_errors: bool = True,
     ):
         try:
-            # Check if model supports vision understanding (if not Endpoint ID)
-            model = doubao_config.model.strip()
-            if not model.startswith("ep-") and model not in doubao_vision_models:
-                raise Exception(
-                    f"Model {model} does not support vision understanding. Please use vision-capable models: {', '.join(doubao_vision_models[:5])}... or use vision-capable Endpoint ID"
-                )
-
             messages = []
 
             # Add system prompt (if provided)
