@@ -124,15 +124,6 @@ class DoubaoAPI:
         if not model:
             raise ValueError("Model cannot be empty")
 
-        # Check if it's a valid Endpoint ID or Model ID
-        is_endpoint_id = model.startswith("ep-") and len(model) >= 10
-        is_model_id = model in doubao_models or model in doubao_vision_models
-
-        if not is_endpoint_id and not is_model_id:
-            raise ValueError(
-                f"Invalid model format: {model}. Please use Endpoint ID (format: ep-xxxxxxxxxx-xxxxx) or valid Model ID (e.g.: doubao-seed-1.6-250615)"
-            )
-
         url = f"{self.endpoint}/chat/completions"
 
         # Build request data
