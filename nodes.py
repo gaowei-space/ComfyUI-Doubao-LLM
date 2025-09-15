@@ -54,6 +54,7 @@ class DoubaoConfig(BaseModel):
     temperature: float = 0.7
     top_p: float = 0.9
     stream: bool = False
+    seed: Optional[int] = None
 
 
 class MessageRole(str, Enum):
@@ -135,6 +136,10 @@ class DoubaoAPI:
             "top_p": config.top_p,
             "stream": config.stream,
         }
+        
+        # Add seed parameter if provided (with compatibility check)
+        if config.seed is not None:
+            data["seed"] = config.seed
 
         try:
             response = requests.post(
@@ -279,7 +284,19 @@ class DoubaoConfigNode:
                         "tooltip": "Nucleus sampling parameter, controls output diversity",
                     },
                 ),
-            }
+            },
+            "optional": {
+                "seed": (
+                    "INT",
+                    {
+                        "default": -1,
+                        "min": -1,
+                        "max": 2147483647,
+                        "step": 1,
+                        "tooltip": "Random seed for reproducible results. Set to -1 or leave empty for random generation",
+                    },
+                ),
+            },
         }
 
     RETURN_TYPES = ("DOUBAO_CONFIG",)
@@ -288,11 +305,18 @@ class DoubaoConfigNode:
     CATEGORY = "Doubao LLM"
 
     def create_config(
-        self, model: str, max_tokens: int, temperature: float, top_p: float
+        self, model: str, max_tokens: int, temperature: float, top_p: float, seed: int = -1
     ):
+        # Handle seed parameter with compatibility
+        seed_value = None if seed == -1 else seed
+        
         return (
             DoubaoConfig(
-                model=model, max_tokens=max_tokens, temperature=temperature, top_p=top_p
+                model=model, 
+                max_tokens=max_tokens, 
+                temperature=temperature, 
+                top_p=top_p,
+                seed=seed_value
             ),
         )
 
